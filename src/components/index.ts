@@ -1,4 +1,2 @@
-export { default as MemoExample } from "./MemoExample";
-export { default as CallbackExample } from "./CallbackExample";
-export { default as ToggleSwitch } from "./ToggleSwitch";
-export { default as NonOptimized } from "./NonOptimized";
+export { ToggleSwitch } from "./toggle-switch.component";
+export { IncrementButton } from "./increment-button.component";
