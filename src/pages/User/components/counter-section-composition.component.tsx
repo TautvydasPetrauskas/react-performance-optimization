@@ -13,6 +13,7 @@ export const CounterSectionComposition = () => {
 
   return (
     <div>
+      <p style={{ color: "blue" }}>Compozed user!</p>
       <p>Count: {count}</p>
       <button onClick={() => setCount(count + 1)}>Increment</button>
       <SuperIncrementButtonMemoized handleClick={handleBigIncrement} />

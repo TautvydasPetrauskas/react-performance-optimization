@@ -1,11 +1,12 @@
-import { PropsWithChildren, useState } from "react";
+import { useState } from "react";
 import { DashboardBackground } from "../types/dashboard.type";
+import { ExpensiveChart } from "./expensive-chart.component";
 
-export const BackgroundController = ({ children }: PropsWithChildren) => {
+export const DashboardComponent = () => {
   const [bgColor, setBgColor] = useState<DashboardBackground>("lightgray");
 
   return (
-    <div style={{ backgroundColor: bgColor, padding: "20px" }}>
+    <>
       <select
         value={bgColor}
         onChange={(e) => setBgColor(e.target.value as DashboardBackground)}
@@ -14,7 +15,10 @@ export const BackgroundController = ({ children }: PropsWithChildren) => {
         <option value="lightblue">Light Blue</option>
         <option value="lightgreen">Light Green</option>
       </select>
-      {children}
-    </div>
+      <div style={{ backgroundColor: bgColor, padding: "20px" }}>
+        <p>Non-optimized Dashboard Overview</p>
+      </div>
+      <ExpensiveChart />
+    </>
   );
 };

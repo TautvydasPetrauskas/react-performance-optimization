@@ -1,9 +1,9 @@
 import { useMemo } from "react";
 import { bigNumber } from "../../../defaults/values.default";
-import { UserProfileProps } from "../user.page";
+import { UserProfileProps } from "./user-profile.component";
 
 export const UserProfileUseMemo = ({ theme }: UserProfileProps) => {
-  console.log("UserProfile with useMemo re-rendered");
+  console.log("UserProfile with useMemo for calculation re-rendered");
 
   const calculateExpensiveValue = useMemo(() => {
     for (let i = 0; i < bigNumber; i++) {}

@@ -15,7 +15,7 @@ export const BackgroundSelector = () => {
         <option value="lightgreen">Light Green</option>
       </select>
       <div style={{ backgroundColor: bgColor, padding: "20px" }}>
-        <p>Dashboard Overview</p>
+        <p>Optimized version 1 of Dashboard Overview</p>
       </div>
     </>
   );

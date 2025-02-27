@@ -1,5 +1,9 @@
 import { bigNumber } from "../../../defaults/values.default";
-import { UserProfileProps } from "../user.page";
+import { UserTheme } from "../interfaces/user.interface";
+
+export interface UserProfileProps {
+  theme: UserTheme;
+}
 
 export const UserProfile = ({ theme }: UserProfileProps) => {
   console.log("UserProfile re-rendered");

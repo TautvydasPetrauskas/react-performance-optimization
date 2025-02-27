@@ -1,5 +1,5 @@
-import { CounterSectionComposition } from "./components/counter-section-composition.component";
-import { UserProfile } from "./components/user-profile.component";
+import { CounterSectionComposition } from "./counter-section-composition.component";
+import { UserProfile } from "./user-profile.component";
 
 export const UserComposition = () => {
   const theme = { color: "blue", count: 1 };

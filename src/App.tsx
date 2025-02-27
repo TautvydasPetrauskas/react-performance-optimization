@@ -2,36 +2,38 @@ import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
 const Home = lazy(() =>
-  import("./pages/index").then((module) => ({ default: module.Home }))
+  import("./pages/home.page").then((module) => ({ default: module.Home }))
 );
+
 const User = lazy(() =>
   import("./pages/User").then((module) => ({ default: module.User }))
 );
-const Usermemoized = lazy(() =>
-  import("./pages/User").then((module) => ({ default: module.UserMemoized }))
-);
-const UserUseMemo = lazy(() =>
-  import("./pages/User").then((module) => ({ default: module.UserUseMemo }))
-);
-const UserComposition = lazy(() =>
-  import("./pages/User").then((module) => ({ default: module.UserComposition }))
-);
+
 const Dashboard = lazy(() =>
   import("./pages/Dashboard").then((module) => ({ default: module.Dashboard }))
 );
-const DashboardOptimized1 = lazy(() =>
-  import("./pages/Dashboard").then((module) => ({
-    default: module.DashboardOptimized1,
+
+const Theming = lazy(() =>
+  import("./pages/Theming").then((module) => ({
+    default: module.Theming,
   }))
 );
-const DashboardOptimized2 = lazy(() =>
-  import("./pages/Dashboard").then((module) => ({
-    default: module.DashboardOptimized2,
+
+const LazyCat = lazy(() =>
+  import("./pages/lazy-cat.page").then((module) => ({
+    default: module.LazyCat,
   }))
 );
-const Customer = lazy(() =>
-  import("./pages/Customer").then((module) => ({
-    default: module.Customer,
+
+const Context = lazy(() =>
+  import("./pages/ContextExample").then((module) => ({
+    default: module.Context,
+  }))
+);
+
+const ComponentA = lazy(() =>
+  import("./pages/test.page").then((module) => ({
+    default: module.ComponentA,
   }))
 );
 
@@ -46,44 +48,30 @@ const App = () => (
           <Link to="/user">User</Link>
         </li>
         <li>
-          <Link to="/user-use-memo">User Use Memo</Link>
-        </li>
-        <li>
-          <Link to="/user-memoized">User Memoized</Link>
-        </li>
-        <li>
-          <Link to="/user-composition">User Composition</Link>
-        </li>
-        <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
         <li>
-          <Link to="/dashboard-optimized-1">Dashboard Optimized 1</Link>
+          <Link to="/theming">Theming</Link>
         </li>
         <li>
-          <Link to="/dashboard-optimized-2">Dashboard Optimized 2</Link>
+          <Link to="/lazy-cat">Lazy cat</Link>
         </li>
         <li>
-          <Link to="/customer">Customer</Link>
+          <Link to="/context">Context</Link>
+        </li>
+        <li>
+          <Link to="/test">Test</Link>
         </li>
       </ul>
 
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/user" element={<User />} />
-        <Route path="/user-memoized" element={<Usermemoized />} />
-        <Route path="/user-use-memo" element={<UserUseMemo />} />
-        <Route path="/user-composition" element={<UserComposition />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route
-          path="/dashboard-optimized-1"
-          element={<DashboardOptimized1 />}
-        />
-        <Route
-          path="/dashboard-optimized-2"
-          element={<DashboardOptimized2 />}
-        />
-        <Route path="/customer" element={<Customer />} />
+        <Route path="/theming" element={<Theming />} />
+        <Route path="/lazy-cat" element={<LazyCat />} />
+        <Route path="/context" element={<Context />} />
+        <Route path="/test" element={<ComponentA />} />
       </Routes>
     </Suspense>
   </Router>
