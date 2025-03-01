@@ -5,7 +5,7 @@ export const UserComposition = () => {
   const theme = { color: "blue", count: 1 };
 
   return (
-    <div>
+    <div id="user-composition">
       <CounterSectionComposition />
       <UserProfile theme={theme} />
     </div>
